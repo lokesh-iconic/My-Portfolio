@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @keyframes gradientAnimation {
+            0% { background: linear-gradient(45deg, #d0afa6, #d3b6a1); }
+            50% { background: linear-gradient(45deg, rgb(175, 146, 206), #98b1dd); }
+            100% { background: linear-gradient(45deg, #caa399, #dabca5); }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            background: url('background.jpg') no-repeat center center fixed; /* Add your background image here */
+            background-size: cover; /* Ensure the image covers the entire page */
+            animation: gradientAnimation 15s ease infinite; /* Optional: Keep if you want gradient animation */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensure header is above other content */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 1rem;
+            text-align: center;
+            margin: 0rem 0; /* To account for the fixed header */
+            opacity: 0.9; /* Optional: Add a slight transparency to the sections */
+        }
+
+        #home {
+            padding: 3rem; /* Adjust padding for better spacing */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 0; /* Adjust top margin if needed */
+        }
+        
+        #home .text {
+            flex: 1; /* Allows the text section to take available space */
+            text-align: left; /* Aligns the text to the left */
+            max-width: 80%;
+        }
+        
+        #home h1 {
+            text-align: center; /* Center-align the heading text */
+            margin: 0;
+            padding-top: 1rem;
+            width: 80%;
+            margin-bottom: 1rem; /* Adjust this value to control the space below the heading */
+        }
+
+        #home p {
+            margin: 0; /* Removes default margin from paragraph */
+        }
+
+        #home img {
+            border-radius: 10%;
+            width: 150px;
+            height: 200px;
+            margin-right: 2rem;
+            position: absolute;
+            right: 0.5rem;
+            top: 110%;
+            transform: translateY(-50%);
+        }
+
+        #education {
+            padding: 2rem; /* Padding for the section */
+            text-align: left; /* Align text to the left */
+            margin: 0rem 0; /* Margin to create space around the section */
+        }
+        
+        #education ul {
+            list-style-type: none; /* Removes default list styling */
+            padding-left: 0; /* Removes default padding from the left */
+        }
+        
+        #education ul li {
+            font-weight: bold; /* Makes the list item text bold */
+            margin-bottom: 0.5rem; /* Adds space between list items */
+        }
+        
+        #education p {
+            margin-top: -0.5rem; /* Negative margin to reduce space above the paragraph */
+            margin-bottom: 1rem; /* Space below the paragraph */
+            text-align: justify; /* Justified alignment for paragraph text */
+        }
+        
+
+        #about {
+            padding: 2rem;
+            text-align: left; /* Aligns list items to the left */
+            max-width: 80%;
+            margin: 0rem 0 2rem 0;
+        }
+        
+        #about ul {
+            list-style-type: none; /* Removes default list styling */
+            padding-left: 0; /* Removes default padding from the left */
+        }
+        
+        #about ul li {
+            font-weight: bold; /* Makes the list item text bold */
+            margin-bottom: 0.5rem; /* Adds some space between list items */
+        }
+        
+        #about p {
+            margin-top: -0.5rem; /* Negative margin to reduce space above the paragraph */
+            margin-bottom: 1rem; /* Space below the paragraph */
+            text-align: justify; /* Justified alignment for paragraph text */
+        }
+        
+
+        #portfolio {
+            padding: 2rem;
+            text-align: justify;
+            max-width: 80%;
+            margin: 0rem 0;
+        }
+
+        #achievements {
+            padding: 2rem; /* Padding for the section */
+            text-align: left; /* Align text to the left */
+            margin: 0rem 0; /* Margin to create space around the section */
+        }
+        
+        #achievements ul {
+            list-style-type: none; /* Removes default list styling */
+            padding-left: 0; /* Removes default padding from the left */
+        }
+        
+        #achievements ul li {
+            font-weight: bold; /* Makes the list item text bold */
+            margin-bottom: 0.5rem; /* Adds space between list items */
+        }
+        
+        #achievements p {
+            margin-top: -0.5rem; /* Negative margin to reduce space above the paragraph */
+            margin-bottom: 1rem; /* Space below the paragraph */
+            text-align: justify; /* Justified alignment for paragraph text */
+            max-width: 80%;
+        }  
+        
+        #contact {
+            background-color: #ddd;
+            padding: 1rem 2rem; /* Adjust padding to control section height */
+            min-height: 170px; /* Ensure a minimum height */
+            margin-top: 0rem; /* Add space above the contact section */
+        }        
+
+        .social-links {
+            display: flex;
+            justify-content: center; /* Centers the links horizontally */
+            align-items: center; /* Centers the items vertically if needed */
+            gap: 2rem; /* Adds spacing between the links */
+            margin-top: 1rem; /* Adds space above the profiles */
+        }
+        
+        .social-links a {
+            color: #333; /* Default color for the links */
+            text-decoration: none; /* Removes underline */
+            font-size: 1.2rem; /* Adjusts font size */
+            display: flex; /* Aligns icon and text horizontally */
+            align-items: center; /* Vertically centers the icon with text */
+        }
+        
+        .social-links i {
+            margin-right: 0.5rem; /* Space between icon and text */
+            font-size: 1.5rem; /* Adjusts icon size */
+        }
+        
+        .social-links a:hover {
+            color: #0077b5; /* Changes color on hover (LinkedIn example) */
+        }        
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0.1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="text">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm Lokesh K J. I'm a student pursuing BE in Artificial Intelligence and Machine Learning.<br> As a dedicated and proactive 
+                student, I am seeking an opportunity to apply my academic knowledge and hands-on experience in real-time projects.</p>
+        </div>
+        <img src="profile.jpg" alt="Lokesh">
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>Bachelor of Engineering in Artificial Intelligence and Machine Learning</li>
+            <p>HKBK College of Engineering, 2025<br>GPA: 8.85</p>
+            <li>Physics, Chemistry, Mathematics, Biology (PCMB)</li>
+            <p>BEML Composite Pre-University College, 2021<br>Percentage: 85.83%</p>
+            <!-- Add more education entries as needed -->
+        </ul>
+    </section>
+    
+
+    <section id="about">
+        <h2>About Me</h2>
+        <ul>
+            <p>Motivated to engage in a role where I can blend creativity and analytical thinking to drive impactful outcomes. 
+                I seek to contribute to a team-oriented environment that values innovation and offers opportunities for continuous growth 
+                and learning.</p>
+            <li>Experience</li>
+            <p><b>Dotch Endeavours - Intern</b> I completed an internship in full stack web development, where I gained hands-on experience in both front-end and back-end 
+                technologies. During this internship, I worked on a project focused on developing a child care management system.</p>
+            <li>Skills</li>
+            <p>I specialize in Python, Data Science, Machine Learning, Data Structures, C Programming, R Programming, 
+                Java and Data Analytics. And some basics of Natural Language Processing.</p>
+            <li>Hobbies</li>
+            <p>I have a passion for coding, where I enjoy solving problems and building projects. Reading is another hobby of mine, allowing me 
+                to explore diverse genres and expand my knowledge. Music plays a significant role in my life, offering both relaxation and inspiration. 
+                I also love traveling, which gives me the opportunity to discover new places, experience different cultures, and gain fresh perspectives.</p>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="project">
+            <h3>Project 1 - Flood Prediction and Management using ML and IoT</h3>
+            <p>This project employs a Random Forest algorithm to predict floods in underpasses based on synthetic rainfall data. 
+               It integrates an Arduino Uno with an I2C LCD to display warnings when rainfall exceeds certain threshold. 
+               The system features a water level sensor and ultrasonic sensors to monitor and manage water levels. 
+               In the event of a flood, servomotors automatically close gates on both sides of the underpass, 
+               and a water motor helps collect and discharge water through underground pipelines. 
+               This solution enhances safety and efficiency in flood management.
+            </p>
+        </div>
+        <div class="project">
+            <h3>Project 2 - Tourism Management System</h3>
+            <p>Travel and Tourism Management System is a computerized system used to manage the operations related to traveling, 
+               booking, sightseeing, and arranging accommodation. The system is designed to help travelers to get the idea about 
+               the places they are going to visit, the quality of amenities and services, and the attractions at their destination.
+               The objective of the Travel and Tourism Management System project is to develop a system that automates the processes 
+               and activities of a travel and the purpose is to design a system using which one can perform all operations related to 
+               traveling.</p>
+        </div>
+        <!-- Add more projects as needed -->
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements and Certifications</h2>
+        <ul>
+            <li><strong><a href="https://www.coursera.org/account/accomplishments/verify/35RJLP4CQGLR">Machine Learning for All</a></strong></li>
+            <p>Completed a comprehensive Machine Learning certification program from University of London in June 2024.</p>
+            <li><strong><a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS108S4323227720222275">The Joy of Computing using Python</a></strong></li>
+            <p>Successfully completed the Python course by on NPTEL.</p>
+            <li><strong>First Place in ISTE</strong></li>
+            <p>I've achieved first place in the Code Golf event during the Inter-College Tech-Fest organized by HKBKCE-ISTE Students Chapter 
+                contributing to a winning two-member team, showcasing exceptional problem-solving skills and effective teamwork and leadership.</p>
+            <!-- Add more achievements or certifications as needed -->
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach me at <a href="mailto:kjlokesh83@gmail.com">kjlokesh83@gmail.com</a>.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/lokesh-k-j-16a542284/" target="_blank">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/lokesh-iconic" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.instagram.com/lokesh__iconic?utm_source=qr" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </section>    
+
+    <footer>
+        <p>&copy; 2024 Lokesh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
